@@ -1,6 +1,6 @@
-import React from "react";
+import React from "react"; //final
 import ReactDOM from "react-dom/client";
-import "./index.css";
+import "./index-pizza.css";
 
 const pizzasData = [
   {
@@ -58,8 +58,10 @@ function App() {
 }
 
 function Header() {
+  // const style = { color: "red", fontSize: "25", textTransform: "uppercase" };
   return (
     <header className="header">
+      {/* <h1 style={style}>welcome to Italiano pizza resturant</h1> */}
       <h1>welcome to Italiano pizza resturant</h1>
     </header>
   );
@@ -67,7 +69,7 @@ function Header() {
 
 function Menu() {
   const pizzasList = pizzasData;
-
+  // const pizzasList = [];
   const nothing = pizzasList.length;
 
   return (
@@ -89,12 +91,27 @@ function Menu() {
       ) : (
         <p> We're still working on our menu, please come back later</p>
       )}
+      {/* <Pizza
+        name="Pizza Spinaci"
+        sideDishes="Tomato, mozarella, spinach, and ricotta cheese"
+        photoName="pizzas/spinaci.jpg"
+        price={110}
+      />
+
+      <Pizza
+        name="Pizza Funghi"
+        sideDishes="Tomato, mozarella, mushrooms, and onion"
+        photoName="pizzas/funghi.jpg"
+        price={213}
+      /> */}
     </main>
   );
 }
 
 function Pizza({ pizzaObj }) {
   console.log(pizzaObj);
+
+  // if (pizzaObj.soldOut) return null;
 
   return (
     <li className={`pizza ${pizzaObj.soldOut ? "sold-out" : ""}`}>
@@ -115,6 +132,8 @@ function Footer() {
   const close = 22;
   const isOpen = hour >= open && hour <= close;
   console.log(isOpen);
+  // if (hour >= Open && hour <= Close) alert("we're currently open");
+  // else alert("sorry we're close");
 
   return (
     <footer className="footer">
@@ -130,15 +149,13 @@ function Footer() {
 }
 
 function Order({ close, open }) {
-  return (
-    <div className="order">
-      <p>
-        We'er open from {open} until {close}:00. Come visit us or please order
-        online.
-      </p>
-      <button className="btn">Order</button>
-    </div>
-  );
+  <div className="order">
+    <p>
+      We'er open from {open} until {close}:00. Come visit us or please order
+      online.
+    </p>
+    <button className="btn">Order</button>
+  </div>;
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
