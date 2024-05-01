@@ -1,6 +1,6 @@
 import React from "react"; //final
 import ReactDOM from "react-dom/client";
-import "./index-pizza.css";
+import "./index.css";
 
 const pizzasData = [
   {
@@ -149,13 +149,15 @@ function Footer() {
 }
 
 function Order({ close, open }) {
-  <div className="order">
-    <p>
-      We'er open from {open} until {close}:00. Come visit us or please order
-      online.
-    </p>
-    <button className="btn">Order</button>
-  </div>;
+  return (
+    <div className="order">
+      <p>
+        We'er open from {open} until {close}:00. Come visit us or please order
+        online.
+      </p>
+      <button className="btn">Order</button>
+    </div>
+  );
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
