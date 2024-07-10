@@ -49,8 +49,10 @@ const tempWatchedData = [
   },
 ];
 
-const average = (arr) =>
-  arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
+const calc = (total, num, i, arr) => total + num / arr.length;
+const average = (arr) => arr.reduce(calc, 0);
+
+// console.log(average([1, 2, 3]));
 
 const KEY = "efca0548";
 export default function App() {
@@ -351,7 +353,8 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
   //     return function () {
   //       document.removeEventListener("keydown", callback);
   //     };
-  //   }[onCloseMovie]
+  //   },
+  //   [onCloseMovie]
   // );
 
   useEffect(
