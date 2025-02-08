@@ -8,7 +8,7 @@ import AppLayout from "./pages/AppLayout";
 import PageNotFound from "./pages/PageNotFound";
 import CityList from "./Components/CityList";
 import CountryList from "./Components/CountryList";
-// import City from "./component.City";
+import City from "./Components/City";
 
 const BASE_URL = "http://localhost:8000";
 
@@ -35,7 +35,7 @@ function App() {
 
   return (
     <div>
-      <h1>hello word</h1>
+      {/* <h1> hello word </h1> */}
       <BrowserRouter>
         <Routes>
           {/* <Route path="/" element={<Homepage />} /> */}
@@ -52,7 +52,7 @@ function App() {
               path="cities"
               element={<CityList cities={cities} isLoading={isLoading} />}
             />
-            {/* <Route path="cities/:id" element={<City />} /> */}
+            <Route path="cities/:id" element={<City />} />
             <Route
               path="countries"
               element={<CountryList cities={cities} isLoading={isLoading} />}
